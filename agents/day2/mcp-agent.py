@@ -63,7 +63,8 @@ retry_config = types.HttpRetryOptions(
     http_status_codes=[429, 500, 503, 504],
 )
 
-# nodeJS pip install needed
+# nodeJS install needed
+# sudo apt update && sudo apt install -y nodejs npm
 # --- 3. MCP tool setup (unchanged) ---
 mcp_image_server = McpToolset(
     connection_params=StdioConnectionParams(
