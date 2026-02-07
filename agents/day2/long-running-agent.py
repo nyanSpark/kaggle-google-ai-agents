@@ -1,4 +1,3 @@
-
 import uuid
 import os
 import asyncio
@@ -301,21 +300,17 @@ async def run_shipping_workflow(query: str, auto_approve: bool = True):
 print("✅ Workflow function ready")
 
 
-# # Demo 1: It's a small order. Agent receives auto-approved status from tool
-# await run_shipping_workflow("Ship 3 containers to Singapore")
+import asyncio
 
-# # Demo 2: Workflow simulates human decision: APPROVE ✅
-# await run_shipping_workflow("Ship 10 containers to Rotterdam", auto_approve=True)
-
-# # Demo 3: Workflow simulates human decision: REJECT ❌
-# await run_shipping_workflow("Ship 8 containers to Los Angeles", auto_approve=False)
-
-
-async def run_workflow1():
+async def main():
     # Demo 1: It's a small order. Agent receives auto-approved status from tool
-    response = await run_shipping_workflow("Ship 3 containers to Singapore")
-    print("Print Response")
-    print(response)
+    await run_shipping_workflow("Ship 3 containers to Singapore")
 
-asyncio.run(run_workflow1())
+    # Demo 2: Workflow simulates human decision: APPROVE ✅
+    await run_shipping_workflow("Ship 10 containers to Rotterdam", auto_approve=True)
 
+    # Demo 3: Workflow simulates human decision: REJECT ❌
+    await run_shipping_workflow("Ship 8 containers to Los Angeles", auto_approve=False)
+
+if __name__ == "__main__":
+    asyncio.run(main())

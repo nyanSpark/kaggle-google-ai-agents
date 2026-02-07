@@ -116,7 +116,7 @@ async def run_session(runner_instance: Runner,
 print("✅ Helper functions defined.")
 
 #########################################
-# Implementing persistent session agent #
+# Implementing context compaction agent #
 #########################################
 APP_NAME = "default"  # Application
 USER_ID = "default"  # User
